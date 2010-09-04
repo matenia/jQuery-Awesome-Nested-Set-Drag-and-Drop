@@ -1,0 +1,29 @@
+<% title 'Matenia\'s Drag and Drop Category Demo'%>
+<h2>Example of outputting top 2 levels only</h2>
+<h3>useful for basic navigation</h3>
+<div id="twolevelnav">
+	<% for category in Category.roots %>
+		<ul>
+			<li><%= category.name %>
+				<% if category.children.size > 0 %>
+					<ul>
+					<% for child in category.children %>
+						<li><%= child.name %></li>
+					<% end -%>
+					</ul>
+				<% end -%>
+			</li>
+		</ul>
+	<% end -%>
+
+</div>
+
+<div class="clear"> </div>
+
+<h2>RENDER EACH NODE IN TREE AS AN UNORDERED LIST</h2>
+<small>NOTE: PARTIAL RENDERED IS LOCATED AT "views/partials/_tree.html.erb", you can modify this to suit your needs</small>
+<ul id="tree">
+	<% for rootnode in Category.roots %>
+    	<%= render :partial => "partials/tree", :locals => {:root => rootnode} %>
+	<% end -%>
+</ul>

@@ -1,0 +1,52 @@
+<% content_for :head do -%>
+	<%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
+	<%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js'%>
+	<%= javascript_include_tag 'serializelist', :cache => true %>
+	<%= javascript_include_tag 'nestedsortables', :cache => true %>
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('ul#tree').nestedSortable({	
+						disableNesting: 'no-nest',
+						forcePlaceholderSize: true,
+						handle: 'div',
+						items: 'li',
+						opacity: .6,
+						placeholder: 'placeholder',
+						tabSize: 25,
+						tolerance: 'pointer',
+						toleranceElement: '> div',
+
+					});
+					$('#status').hide();
+		$('.save').click(function(){
+			var mylist = $('#tree').serializelist();
+			$.post("/categories/array", mylist);
+			$("#status").html("Success, Your New Category Tree Has Been Saved").show();
+			//alert(mylist);
+			return false;
+		});	
+	});
+	</script>
+<% end -%>
+<% title "DRAG AND DROP CATEGORIES"%>
+<p><strong>Drag and drop categories to structure your tree, and hit save tree. An ajax request is performed and the status box below will be updated</strong></p>
+
+<p>The source of this page will reveal the jquery code involved to get this working. Styles are located in application.css in public directory under the <strong>dragdrop</strong> comment. For simple reasons, we are using google for jquery libraries but feel free to store your own copy of these libraries in <strong>public/javascripts</strong> and include them using
+<pre style=" padding: 10px; border-radius: 10px; border-color: #CCC; background-color: #EEE;"><strong>&lt;%= javascript_include_tag 'name_of_my_jquery_library_file', :cache =&gt; true %&gt; &nbsp; </strong> and
+<strong>&lt;%= javascript_include_tag 'name_of_my_jquery_UI_library_file', :cache =&gt; true %&gt;</strong>
+</pre>
+
+<h4> inline status updated with ajax </h4>
+<small>This is styled in <pre> public/stylesheets/application.css</pre> and is hidden on initial page load</small>
+<div id="status">
+	
+</div>
+
+<div style="font-size: 20px;"><a href class="save" src="">SERIALIZE AND SAVE</a> &nbsp; &nbsp; <%= link_to "RELOAD THIS PAGE", ''%></div>
+<% @root = Category.roots %>
+<ul id="tree">
+	<% for rootnode in @root %>
+    	<%= render :partial => "partials/tree", :locals => {:root => rootnode} %>
+	<% end -%>
+</ul>
+

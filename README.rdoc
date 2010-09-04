@@ -1,0 +1,29 @@
+= TUTORIAL
+== HOW TO CREATE DRAG AND DROP SORTING USING AWESOME NESTED SET AND JQUERY
+
+I have been searching high and low for a plugin that will allow this, and decided to combine a few tools, write a few helper methods and controller actions and roll my own.
+
+You can find awesome_nested_set at: http://github.com/collectiveidea/awesome_nested_set with setup instructions. (Thank's guys, it really lives up to it's name) - check their wiki for gotchas and cheat sheets
+
+I hope this will help someone else out there having the same problem as I did.
+
+== OBJECTIVE
+
+Create an interface to drag and drop categories in a tree-like structure with sorting (using unordered lists)
+
+== REQUIREMENTS
+
+This works best with a new set, as I have implemented this in a few existing sets and found that in one particular project, some of the sorting was not working.
+
+== Working Example App
+
+Please see the example_app directory for a simple working demo.
+NOTE: The demo uses rails 2.3.8
+
+== FINAL NOTES
+
+I will admit that this is not the most efficient way of handling this action, but it does work. I welcome any refactoring suggestions. Feel free to email me at matenia@gmail.com
+
+== COPYRIGHT
+
+This project is small, but many should find it useful as it took me a week to work this out due to a lack of simple documentation and very little help provided on stackoverflow.

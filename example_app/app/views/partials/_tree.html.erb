@@ -1,0 +1,8 @@
+<% content_tag :li, :id => dom_id(root) do %>
+    <%= content_tag :div, "#{root.name} &nbsp; <small>" + link_to ('edit', edit_category_path(root)) + "</small>" %>
+    <% content_tag :ul do %>
+        <% for child in root.children do %>
+            <%= render :partial => "partials/tree", :locals => {:root => child }%>
+        <% end %>
+    <% end unless root.leaf? %>
+<% end %>

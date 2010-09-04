@@ -1,0 +1,17 @@
+<% form_for @category do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+	<p><%= f.label :parent_id, "Parent Category" %><%= f.select :parent_id, nested_set_options(Category, @category) {|i| "#{'-' * i.level} #{i.name}" }, :prompt => "NONE: Make This A Root Category" %> <br />
+		<small>NOTE: Leaving the above field blank makes it a root category</small>
+	</p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+
+
+  <p><%= f.submit %></p>
+<% end %>

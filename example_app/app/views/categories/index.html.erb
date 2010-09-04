@@ -1,0 +1,29 @@
+<% title "Categories" %>
+
+<h4> root categories are highlighted </h4>
+<small><strong>NOTE: </strong>DELETING A CATEGORY WITH CHILDREN, ALSO DELETES THE CHILDREN</small>
+<p> &nbsp; </p>
+<table style="text-align:left;">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+	<th><small>Actions</small></th>
+	<th>Parent Category</th>
+  </tr>
+  <% for category in @categories %>
+		<% if category.root? %>
+    <tr style="background-color:#EEF">
+		<% else %>
+		<tr>
+		<% end -%>
+      <td><%=h category.name %></td>
+      <td><%=h truncate(category.description, :length => 50, :omission => ' ...') %></td>
+      <td><%= link_to "Show", category %> &nbsp; <%= link_to "Edit", edit_category_path(category) %> &nbsp; <%= link_to "Destroy", category, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% unless category.parent_id.nil? %>
+			<td><%= category.parent.name %></td>
+		<% end -%>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Category", new_category_path %></p>

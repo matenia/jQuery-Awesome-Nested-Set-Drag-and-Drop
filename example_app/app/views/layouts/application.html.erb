@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id="container">
+		<div id="rhs_nav">
+			<h4>QUICK LINKS</h4>
+			<%= link_to "Root Path", root_url%><br />
+			<%= link_to "Categories Index Page", categories_path%> <br />
+			<%= link_to "Drag and Drop Category Tree", dragdrop_categories_path%><br />
+			<%= link_to "Back to Github Repo", ''%>
+			<%= link_to "Matenia's Repositories", 'http://github.com/matenia'%>
+		</div>
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+      
+      <%- if show_title? -%>
+        <h1><%=h yield(:title) %></h1>
+      <%- end -%>
+      
+      <%= yield %>
+	<div class="clear"> </div>
+    </div>
+	<div id="footer">
+		<p>Although I did not make these plugins, I did put together this application of the plugins<br />
+			Please let me know if you find it useful by emailing <a href="mailto:matenia@gmail.com">matenia@gmail.com</a> </p>
+	</div>
+  </body>
+</html>

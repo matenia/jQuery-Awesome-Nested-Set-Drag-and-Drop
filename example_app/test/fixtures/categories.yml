@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  description: MyText
+  parent_id: 1
+  lft: 1
+  rgt: 1
+
+two:
+  name: MyString
+  description: MyText
+  parent_id: 1
+  lft: 1
+  rgt: 1

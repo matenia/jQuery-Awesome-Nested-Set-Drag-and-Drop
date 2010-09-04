@@ -1,0 +1,25 @@
+body{background-color:#555;font-family: Helvetica,Arial;font-size:14px;}
+a img{border:none;}
+a{color:#0000CC;}
+.clear{clear:both;height:0;overflow:hidden;}
+#container{width:1000px;margin:0 auto;background-color:#FFF;padding:20px 40px;border:solid 1px black;margin-top:20px;border-radius: 10px;}
+#flash_notice,#flash_error{padding:5px 8px;margin:10px 0; border-radius: 10px;}
+#flash_notice{background-color:#CFC;border:solid 1px #6C6;}
+#flash_error{background-color:#FCC;border:solid 1px #C66;}
+.fieldWithErrors{display:inline;}
+#errorExplanation{width:400px;border:2px solid #CF0000;padding:0px;padding-bottom:12px;margin-bottom:20px;background-color:#f0f0f0;}
+#errorExplanation h2{text-align:left;font-weight:bold;padding:5px 5px 5px 15px;font-size:12px;margin:0;background-color:#c00;color:#fff;}
+#errorExplanation p{color:#333;margin-bottom:0;padding:8px;}
+#errorExplanation ul{margin:2px 24px;}
+#errorExplanation ul li{font-size:12px;list-style:disc;}
+#twolevelnav ul {float:left; list-style:none; padding-left: 20px;}
+#rhs_nav {float:right; margin-left: 15px; padding: 10px; border: 1px solid #CCC; border-radius: 10px; background-color: #EEE;}
+/* DRAGDROP STYLING */
+#status { background-color: #CCF; padding: 5px; border: solid 1px #66C; margin: 10px 0px; border-radius: 10px;}
+	/* PLACEHOLDERS FOR DRAG AND DROP */
+.placeholder{  border:dashed 1px #ccc;background-color:#FFFFCC;height:20px;}
+.placeholder2{ border:dashed 1px #666;background-color:#cccccc;height:40px;}
+/* footer styling */
+div#footer{text-align:center; font-size: 0.9em; color: #FFF;line-height:1.5em;}
+div#footer a{text-decoration:none; color:#CCC;}
+div#footer a:hover{color:#EEF;}

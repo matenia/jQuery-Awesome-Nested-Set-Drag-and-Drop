@@ -1,0 +1,19 @@
+<% title "Category: #{@category.name}" %>
+
+<h4>Description: <%= @category.description %> </h4>
+
+<p>
+  <strong>Parent:</strong>
+	<% unless @category.parent.nil? %>
+  		This category is a child of <strong><%=h @category.parent.name.upcase %></strong>
+	<% else %>
+		This is a <strong>ROOT CATEGORY</strong>
+	<% end -%>
+</p>
+
+
+<p>
+  <%= link_to "Edit", edit_category_path(@category) %> |
+  <%= link_to "Destroy", @category, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", categories_path %> | <%= link_to "New Category", new_category_path %>
+</p>
