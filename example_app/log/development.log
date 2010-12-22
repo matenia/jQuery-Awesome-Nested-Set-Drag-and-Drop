@@ -2941,3 +2941,88 @@ Rendered partials/_tree (2.7ms)
 Rendered partials/_tree (0.5ms)
 Rendered partials/_tree (1.6ms)
 Completed in 19ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-10-12 18:49:09) [GET]
+Rendering template within layouts/application
+Rendering index/index
+  [4;36;1mCategory Load (1.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ("categories".parent_id = 5) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ("categories".parent_id = 9) [0m
+  [4;36;1mCategory Load (0.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+Rendered partials/_tree (0.6ms)
+Rendered partials/_tree (0.5ms)
+Rendered partials/_tree (4.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+Rendered partials/_tree (0.5ms)
+Rendered partials/_tree (1.7ms)
+Completed in 125ms (View: 122, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CategoriesController#dragdrop (for 127.0.0.1 at 2010-10-12 18:49:40) [GET]
+Rendering template within layouts/application
+Rendering categories/dragdrop
+  [4;36;1mCategory Load (0.5ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+Rendered partials/_tree (0.6ms)
+Rendered partials/_tree (0.5ms)
+Rendered partials/_tree (5.4ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+Rendered partials/_tree (0.6ms)
+Rendered partials/_tree (2.3ms)
+Completed in 25ms (View: 22, DB: 1) | 200 OK [http://localhost/categories/dragdrop]
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-12-12 17:38:27) [GET]
+Rendering template within layouts/application
+Rendering index/index
+  [4;36;1mCategory Load (1.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ("categories".parent_id = 5) [0m
+  [4;36;1mCategory Load (0.3ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ("categories".parent_id = 9) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+Rendered partials/_tree (0.6ms)
+Rendered partials/_tree (0.5ms)
+Rendered partials/_tree (4.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+Rendered partials/_tree (0.5ms)
+Rendered partials/_tree (1.8ms)
+Completed in 198ms (View: 194, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CategoriesController#dragdrop (for 127.0.0.1 at 2010-12-12 17:38:34) [GET]
+Rendering template within layouts/application
+Rendering categories/dragdrop
+  [4;36;1mCategory Load (0.5ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;35;1mCategory Load (0.3ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+Rendered partials/_tree (0.5ms)
+Rendered partials/_tree (0.4ms)
+Rendered partials/_tree (5.0ms)
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+Rendered partials/_tree (0.5ms)
+Rendered partials/_tree (2.0ms)
+Completed in 73ms (View: 71, DB: 1) | 200 OK [http://localhost/categories/dragdrop]
+
+
+Processing IndexController#index (for 127.0.0.1 at 2010-12-12 20:23:50) [GET]
+Rendering template within layouts/application
+Rendering index/index
+  [4;36;1mCategory Load (1.1ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ("categories".parent_id = 5) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "categories" WHERE ("categories".parent_id = 9) [0m
+  [4;36;1mCategory Load (0.2ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories"."parent_id" IS NULL) ORDER BY "lft"[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "categories" WHERE ("categories".parent_id = 5) ORDER BY "lft"[0m
+Rendered partials/_tree (0.7ms)
+Rendered partials/_tree (0.4ms)
+Rendered partials/_tree (4.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "categories" WHERE ("categories".parent_id = 9) ORDER BY "lft"[0m
+Rendered partials/_tree (0.6ms)
+Rendered partials/_tree (1.8ms)
+Completed in 137ms (View: 134, DB: 2) | 200 OK [http://localhost/]
