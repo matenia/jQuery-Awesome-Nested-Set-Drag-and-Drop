@@ -51,7 +51,7 @@ class CategoriesController < ApplicationController
      #loop through each item in the new list (passed via ajax)
      newlist.each_with_index do |array, index|
        # get the category id of the item being moved
-       moved_item_id = array[1][:id].split(/category_/)
+       moved_item_id = array[1][:id].gsub(/category_/,'')
        # find the object that is being moved (in database)
        @current_category = Category.find_by_id(moved_item_id)
        # if this is the first item being moved, move it to the root.
@@ -73,10 +73,10 @@ class CategoriesController < ApplicationController
      render :nothing => true
    end
    def childstuff(mynode, category)
-     #loop through it's children
-     for child in mynode[:children]
+     #loop through it's children - this is a hash that needs to be sorted
+     for child in mynode[:children].sort
        # get the child id from each child passed into the node (the array)
-       child_id = child[1][:id].split(/category_/)
+       child_id = child[1][:id].gsub(/category_/,'')
        #find the matching category in the database
        child_category = Category.find_by_id(child_id)
        #move the child to the selected category

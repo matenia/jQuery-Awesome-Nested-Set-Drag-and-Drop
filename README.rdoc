@@ -3,7 +3,12 @@
 
 I have been searching high and low for a plugin that will allow this, and decided to combine a few tools, write a few helper methods and controller actions and roll my own.
 
-You can find awesome_nested_set at: http://github.com/collectiveidea/awesome_nested_set with setup instructions. (Thank's guys, it really lives up to it's name) - check their wiki for gotchas and cheat sheets
+You can find awesome_nested_set at: 
+
+http://github.com/collectiveidea/awesome_nested_set with setup instructions (RAILS 2)
+https://github.com/galetahub/awesome_nested_set (RAILS 3)
+
+(Thank's guys, it really lives up to it's name) - check their wiki for gotchas and cheat sheets
 
 I hope this will help someone else out there having the same problem as I did.
 
@@ -20,9 +25,17 @@ This works best with a new set, as I have implemented this in a few existing set
 Please see the example_app directory for a simple working demo.
 NOTE: The demo uses rails 2.3.8
 
+=== UPDATE (28th April 2011)
+
+see rails3 example (rails 3.0.3 ruby 1.8.7) using https://github.com/galetahub/awesome_nested_set (rails 3 version)
+
 == FINAL NOTES
 
-I will admit that this is not the most efficient way of handling this action, but it does work. I welcome any refactoring suggestions. Feel free to email me at matenia@gmail.com
+I will admit that this is not the most efficient way of handling this action, but it does work well, especially if you're not sorting a nested set frequently. I welcome any refactoring suggestions. Feel free to email me at matenia@gmail.com
+
+== MENTIONS AND CREDITS
+
+Thank you to {Chelsea}[http://twitter.com/chelsearobb] for helping me iron out some stubborn code during a hack-meetup.
 
 == COPYRIGHT
 
