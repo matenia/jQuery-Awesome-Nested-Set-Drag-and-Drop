@@ -1,3 +1,43 @@
 <% content_for :head do -%>
   <%= javascript_include_tag 'nestedsortables.min' %>
+  <style type="text/css" media="screen">
+    #sortable{width:300px;}
+    ul{margin-bottom:0px;}
+    .highlight{background-color:#d6d88e;}
+  </style>
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      $("#sortable").nestedSortable({
+        listType: 'ul',
+        items: 'li',
+        placeholder: "highlight",
+        forcePlaceholderSize: true,
+        handle: 'span',
+        helper: 'clone',
+        opacity: .6,
+        revert: 250,
+        tabSize: 25,
+        tolerance: 'pointer',
+        toleranceElement: '> span'
+      });
+      $("#sortable").disableSelection(); // make links not clickable
+      $('#serialize').click(function (){
+        var c = {set : JSON.stringify($('#sortable').nestedSortable('toHierarchy', {startDepthCount: 0}))};
+        $.post("savesort", c, $('#output').html('<p id="flash_notice">Saved Successfully</p>'));
+        return false;
+      });
+    });
+  </script>
 <% end -%>
+
+<h1>Category Sorting Example</h1>
+<p>Drag and drop the categories into a nested set then hit save</p>
+<h3><a href='#' id='serialize'>Save Sorted Elements</a></h3>
+<ul id='sortable'>
+  <% for cat in Category.roots %>
+    <li id='category_<%= cat.id %>'>
+      <span><%= cat.name %></span>
+      <%= render 'shared/children', :item => cat unless cat.leaf? %>
+    </li>
+  <% end -%>
+</ul>

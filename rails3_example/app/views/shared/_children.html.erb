@@ -1,0 +1,8 @@
+<ul>
+  <% item.children.each do |child| %>
+    <li id='category_<%=child.id %>'>
+      <span><%= child.name %></span>
+      <%= render 'shared/children', :item => child unless child.leaf? %>
+    </li>
+  <% end -%>
+</ul>
