@@ -5,6 +5,7 @@
 * NestedSortables.js (see source)
 * Awesome nested set plugin `https://github.com/galetahub/awesome_nested_set.git` fork works well here
 * Nested set-ready model eg. Category, Page, etc ... (see migrations)
+* jQuery and jQuery-ui
 
 ### Other Notes
 
