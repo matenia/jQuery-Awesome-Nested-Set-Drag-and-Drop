@@ -45,7 +45,7 @@ class CategoriesController < ApplicationController
 #  --- I WELCOME ANY SUGGESTIONS TO REFACTOR THIS (do the same with less database calls) ---
   def array
      # assign the sorted tree to a variable
-     newlist = params[:ul]
+     newlist = params[:ul].sort
      # initialize the previous item
      previous = nil
      #loop through each item in the new list (passed via ajax)
